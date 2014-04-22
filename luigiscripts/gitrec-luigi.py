@@ -272,7 +272,7 @@ class CreateUserInterestRecsTable(dynamodb.CreateDynamoDBTable):
         return S3Target(create_full_path(self.output_base_path, self.__class__.__name__))
 
     def table_name(self):
-        return 'github_user_interest_recs_%s' % self.date_string
+        return 'github_sqrt_user_interest_recs_%s' % self.date_string
 
     def requires(self):
         return [CreateGravatarIdsTable(input_base_path=self.input_base_path, output_base_path=self.output_base_path, date_string=self.date_string)]
@@ -296,7 +296,7 @@ class WriteDynamoDBTables(GitRecPigscriptTask):
         return {'OUTPUT_PATH': self.output_base_path,
                 'USER_CONTRIB_TABLE': 'github_sqrt_contrib_recs_%s' % self.date_string,
                 'GRAVATAR_TABLE': 'github_sqrt_user_gravatar_ids_%s' % self.date_string,
-                'USER_INTEREST_TABLE': 'github_user_interest_recs_%s' % self.date_string,
+                'USER_INTEREST_TABLE': 'github_sqrt_user_interest_recs_%s' % self.date_string,
                 'ITEM_ITEM_TABLE': 'github_sqrt_repo_recs_%s' % self.date_string,
                 'AWS_ACCESS_KEY_ID': configuration.get_config().get('dynamodb', 'aws_access_key_id'),
                 'AWS_SECRET_ACCESS_KEY': configuration.get_config().get('dynamodb', 'aws_secret_access_key')}
@@ -423,7 +423,7 @@ class UpdateUserInterestThroughput(dynamodb.UpdateDynamoDBThroughput):
         return [UpdateGravatarIdsThroughput(input_base_path=self.input_base_path, output_base_path=self.output_base_path, date_string=self.date_string)]
 
     def table_name(self):
-        return  'github_user_interest_recs_%s' % self.date_string
+        return  'github_sqrt_user_interest_recs_%s' % self.date_string
 
     def output_token(self):
         return S3Target(create_full_path(self.output_base_path, self.__class__.__name__))
