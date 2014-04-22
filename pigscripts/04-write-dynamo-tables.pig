@@ -28,17 +28,17 @@ grav_ids            =   distinct grav_ids;
 
 item_recs           =   load '$OUTPUT_PATH/item-item-recs'
                         using PigStorage()
-                        as (repo: chararray, rank: int, rec: chararray,
+                        as (repo_lowered: chararray, rank: int, rec: chararray,
                             lang: chararray, forks: int, stars: int, description: chararray);
 
 user_contrib_recs   =   load '$OUTPUT_PATH/user-contrib-recs'
                         using PigStorage()
-                        as (user: chararray, rank: int, rec: chararray, reason: chararray,
+                        as (user_lowered: chararray, rank: int, rec: chararray, reason: chararray,
                             reason_flag: int, forks: int, stars: int, lang: chararray, description: chararray);
 
 user_interest_recs  =   load '$OUTPUT_PATH/user-interest-recs'
                         using PigStorage()
-                        as (user: chararray, rank: int, rec: chararray, reason: chararray,
+                        as (user_lowered: chararray, rank: int, rec: chararray, reason: chararray,
                             reason_flag: int, forks: int, stars: int, lang: chararray, description: chararray);
 
 
