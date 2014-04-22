@@ -1,13 +1,5 @@
-# Mortar Recommendation Engine
+# Mortar Github Recommender
 
-A customizable recommendation engine for Hadoop and Pig by [Mortar Data](http://www.mortardata.com).
+This Mortar project contains the scripts which generate recommendations for [gitrec.mortardata.com](http://gitrec.mortardata.com/). This readme details how the algorithm works; for a just a quick overview, see [this blog post](http://blog.mortardata.com/post/53294300530/gitrec-your-personalized-github-repo-recommender).
 
-## Getting Started / Tutorials
-
-This project contains several complete, runnable examples of the Mortar recommendation engine on example data, as well as a template project for easily getting started with your own data.
-
-For a complete tutorial and explanation of how the recommendation engine works, see the [Mortar Recommendation Engine tutorial](http://help.mortardata.com/recommenders).
-
-## Asking Questions
-
-If you have any questions about the recommendation engine, please post to the [Mortar Q&A Forum](https://answers.mortardata.com/) to ask Mortar's engineers and data scientists.
+For a complete discussion of the Mortar recommendation engine project and how to write your own, visit [our tutorial pages](http://help.mortardata.com/data_apps/recommendation_engine).
