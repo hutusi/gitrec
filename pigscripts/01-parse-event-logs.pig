@@ -138,7 +138,8 @@ logs    =   foreach logs generate
                 repository.stargazers  as num_stars,
                 (repository.language is null ? 'Unknown' : repository.language)
                                        as language,
-                repository.description as description;
+                SUBSTRING(repository.description, 0, 100)
+                                       as description;
 
 logs    =   filter logs by SUBSTRING(item, 0, 1) != '/';
 
